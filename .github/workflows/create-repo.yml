@@ -46,8 +46,8 @@ jobs:
         echo "# $NEW_REPO_NAME" > README.md
         echo "\n${ISSUE_DESCRIPTION}" >> README.md
         # Commit and push the README.md file to the new repository
-        git config user.name "MathieuxHugo"
-        git config user.email "mathieuxhugo@gmail.com"
+        git config --global user.name "MathieuxHugo"
+        git config --global user.email "mathieuxhugo@gmail.com"
         echo "Init"
         git init
         git add README.md
