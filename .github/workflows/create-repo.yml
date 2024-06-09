@@ -10,7 +10,7 @@ jobs:
     if: github.event.label.name == 'new project'
     steps:
     - name: Checkout repository
-      uses: actions/checkout@v2
+      uses: actions/checkout@v4
 
     - name: Extract repository name from issue title
       id: extract_repo_name
@@ -23,7 +23,7 @@ jobs:
 
     - name: Create repository
       env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        GITHUB_TOKEN: ${{ secrets.PAT_TOKEN }}
         NEW_REPO_NAME: ${{ steps.extract_repo_name.outputs.repo_name }}
       run: |
         curl -L \
