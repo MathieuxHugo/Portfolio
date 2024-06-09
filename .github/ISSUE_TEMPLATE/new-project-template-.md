@@ -10,8 +10,8 @@ assignees: MathieuxHugo
 ## Description
 Describe in details the project concept.
 
-## Visibility and money
-Explain how the project will help you gain visibility and money.
+## Goal
+Explain what do you want to achieve with this project
 
 ## Resources
 Put here the resources that may help you to start the project.
