@@ -48,9 +48,12 @@ jobs:
         # Commit and push the README.md file to the new repository
         git config user.name "MathieuxHugo"
         git config user.email "mathieuxhugo@gmail.com"
+        echo "Init"
         git init
         git add README.md
         git commit -m "Add README with repository title and issue description"
         git branch -M main
+        echo "Remote"
         git remote add origin git@github.com:${{ github.repository_owner }}/${NEW_REPO_NAME}.git
+        echo "push"
         git push https://x-access-token:$GITHUB_TOKEN@github.com/${{ github.repository_owner }}/${NEW_REPO_NAME}.git main  
