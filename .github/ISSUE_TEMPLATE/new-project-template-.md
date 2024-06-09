@@ -1,13 +1,13 @@
 ---
 name: New project template.
 about: The goal of this issue is to create the project.
-title: "[NEW PROJECT] Project name"
+title: "[NEW PROJECT]Project name"
 labels: new project
 assignees: MathieuxHugo
 
 ---
 
-# Description
+## Description
 Describe in details the project concept.
 
 ## Visibility and money
