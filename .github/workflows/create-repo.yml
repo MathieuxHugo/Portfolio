@@ -36,7 +36,7 @@ jobs:
 
     - name: Add README to new repository
       env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        GITHUB_TOKEN: ${{ secrets.PAT_TOKEN }}
         NEW_REPO_NAME: ${{ steps.extract_repo_name.outputs.repo_name }}
         ISSUE_DESCRIPTION: ${{ github.event.issue.body }}
       run: |
