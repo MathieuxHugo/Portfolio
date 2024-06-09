@@ -1,0 +1,51 @@
+name: Create Repository on Issue Label
+
+on:
+  issues:
+    types: [labeled]
+
+jobs:
+  create_repo:
+    runs-on: ubuntu-latest
+    if: github.event.label.name == 'new project'
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2
+
+    - name: Extract repository name from issue title
+      id: extract_repo_name
+      run: |
+        echo "Original title: ${{ github.event.issue.title }}"
+        # Extract the title without text between square brackets
+        NEW_REPO_NAME=$(echo "${{ github.event.issue.title }}" | sed 's/\[[^][]*\]//g' | xargs)
+        echo "Processed title: $NEW_REPO_NAME"
+        echo "::set-output name=repo_name::$NEW_REPO_NAME"
+
+    - name: Create repository
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        NEW_REPO_NAME: ${{ steps.extract_repo_name.outputs.repo_name }}
+      run: |
+        curl -X POST -H "Authorization: token $GITHUB_TOKEN" \
+        -H "Accept: application/vnd.github.v3+json" \
+        https://api.github.com/user/repos \
+        -d '{"name":"'"$NEW_REPO_NAME"'"}'
+
+ - name: Add README to new repository
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        NEW_REPO_NAME: ${{ steps.extract_repo_name.outputs.repo_name }}
+        ISSUE_DESCRIPTION: ${{ github.event.issue.body }}
+      run: |
+        # Clone the new repository
+        git clone https://x-access-token:$GITHUB_TOKEN@github.com/${{ github.repository_owner }}/${NEW_REPO_NAME}.git
+        cd $NEW_REPO_NAME
+        # Create the README.md file with the required content
+        echo "# $NEW_REPO_NAME" > README.md
+        echo "\n${ISSUE_DESCRIPTION}" >> README.md
+        # Commit and push the README.md file to the new repository
+        git config user.name "github-actions[bot]"
+        git config user.email "github-actions[bot]@users.noreply.github.com"
+        git add README.md
+        git commit -m "Add README with repository title and issue description"
+        git push origin main
