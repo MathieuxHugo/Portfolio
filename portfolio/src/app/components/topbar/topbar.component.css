@@ -1,0 +1,57 @@
+.custom-toolbar {
+    background-color: #000000; /* Custom background color */
+    color: white; /* Custom text color */
+    height: 15vh;
+    flex-direction: row-reverse;
+  }
+
+.logo {
+    position: absolute;
+    top: 2vh; left: 15vw;
+    padding-top: 0;
+    width: 14vh;
+    height: 11vh;
+    cursor: pointer;
+  }
+  
+  .buttons{
+    width: 80vw;
+    position: absolute;
+    left: 30vw;
+    
+  }
+  .buttons li{
+    display: inline;
+    padding: 2vw;
+    border-right: 0.2vw outset #FFFFFF;
+  }
+  .buttons li:last-child{
+    border-right: none;
+  }
+  
+  button{
+    color: #FFFFFF;
+    background-color: transparent;
+    background-repeat: no-repeat;
+    border: none;
+    cursor: pointer;
+    overflow: hidden;
+    outline: none;
+    font-size: xx-large;
+  }
+  
+  button:hover{
+    color: #EBC000;
+  }
+
+  svg:hover{
+    fill:#EBC000;   
+  }
+
+  .social img{
+
+    position: relative;
+    cursor: pointer;
+    height: 5vh;
+    width: 5vh;
+  }

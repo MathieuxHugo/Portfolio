@@ -1,12 +1,5 @@
-.custom-toolbar {
-    background-color: #ECA400; /* Custom background color */
-    color: white; /* Custom text color */
-
-    height: 20vh;
-  }
-
 .content{
-    background-color: #EAF8BF;
+    background-color: #FFFFFF;
     width: 100vw;
-    height: 80vh;
+    height: 85vh;
 }
