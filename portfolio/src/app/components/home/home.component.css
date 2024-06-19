@@ -1,0 +1,28 @@
+
+
+.container {
+    display: flex;
+    align-items: center;
+    width: 80%; /* Adjust as needed */
+    max-width: 1200px; /* Maximum width for larger screens */
+}
+
+.title {
+    flex: 1;
+    text-align: right;
+    padding-right: 20px;
+    font-size: 2em;
+    font-weight: bold;
+}
+
+.presentation {
+    flex: 2;
+    text-align: left;
+    padding-left: 20px;
+    font-size: 1.2em;
+}
+
+.border {
+    width: 1vw;
+    height: 70vh; 
+}

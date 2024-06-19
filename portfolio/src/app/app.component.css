@@ -2,4 +2,10 @@
     background-color: #FFFFFF;
     width: 100vw;
     height: 85vh;
+    position: absolute;
+    top: 15vh;
+    font-family: Arial, sans-serif; /* Choose a nice font */
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }

@@ -12,7 +12,7 @@ import { TopbarComponent } from './components/topbar/topbar.component';
     RouterOutlet, 
     HttpClientModule, 
     MatIconModule,
-    TopbarComponent
+    TopbarComponent,
   ],
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css'],
@@ -20,7 +20,6 @@ import { TopbarComponent } from './components/topbar/topbar.component';
 })
 export class AppComponent {
   title = 'portfolio';
-
   constructor(
     private matIconRegistry: MatIconRegistry, 
     private domSanitizer: DomSanitizer,

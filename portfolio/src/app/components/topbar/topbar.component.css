@@ -1,57 +1,95 @@
 .custom-toolbar {
-    background-color: #000000; /* Custom background color */
-    color: white; /* Custom text color */
-    height: 15vh;
-    flex-direction: row-reverse;
-  }
+  background-color: #000000; /* Custom background color */
+  color: white; /* Custom text color */
+  height: 15vh;
+  flex-direction: row-reverse;
+}
 
 .logo {
-    position: absolute;
-    top: 2vh; left: 15vw;
-    padding-top: 0;
-    width: 14vh;
-    height: 11vh;
-    cursor: pointer;
-  }
-  
-  .buttons{
-    width: 80vw;
-    position: absolute;
-    left: 30vw;
-    
-  }
-  .buttons li{
-    display: inline;
-    padding: 2vw;
-    border-right: 0.2vw outset #FFFFFF;
-  }
-  .buttons li:last-child{
-    border-right: none;
-  }
-  
-  button{
-    color: #FFFFFF;
-    background-color: transparent;
-    background-repeat: no-repeat;
-    border: none;
-    cursor: pointer;
-    overflow: hidden;
-    outline: none;
-    font-size: xx-large;
-  }
-  
-  button:hover{
-    color: #EBC000;
-  }
+  position: absolute;
+  top: 2vh; left: 15vw;
+  padding-top: 0;
+  width: 14vh;
+  height: 11vh;
+  cursor: pointer;
+}
 
-  svg:hover{
-    fill:#EBC000;   
-  }
+.buttons{
+  width: 80vw;
+  position: absolute;
+  left: 30vw;
+  top: 3vh;
+}
+.buttons li{
+  display: inline;
+  padding: 2vw;
+  border-right: 0.5vw solid transparent;
+  border-image: url(../../../assets/icons/border.drawio.svg);
+  border-image-slice: 7%;
+}
 
-  .social img{
 
-    position: relative;
-    cursor: pointer;
-    height: 5vh;
-    width: 5vh;
-  }
+.buttons li:last-child{
+  border-right: none;
+}
+
+button{
+  color: #FFFFFF;
+  background-color: transparent;
+  background-repeat: no-repeat;
+  border: none;
+  cursor: pointer;
+  overflow: hidden;
+  outline: none;
+  font-size: xx-large;
+}
+
+button:hover{
+  color: #EBC000;
+}
+
+
+/* The container <div> - needed to position the dropdown content */
+.dropdown {
+  position: relative;
+  display: inline-block;
+  
+}
+
+.dropbtn{
+  padding-bottom: 2vh;
+}
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #000000;
+  z-index: 1;
+  border: 0.6vw solid transparent;
+  border-image: url(../../../assets/icons/border.drawio.svg);
+  border-image-slice: 7%;
+  border-top: none;
+  left: -2vw;
+  border-radius: 0.5vw;
+}
+
+/* Links inside the dropdown */
+.dropdown-content button {
+  border-top: 0.5vw solid transparent;
+  border-image: url(../../../assets/icons/border.drawio.svg);
+  border-image-slice: 7%;
+  display: block;
+  width: 100%;
+  padding-top: 2vh;
+  padding-bottom: 2vh;
+}
+
+.projectMenu{
+  font-size: larger;
+}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {display: block;}
+
+
+

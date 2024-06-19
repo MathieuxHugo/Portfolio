@@ -1,26 +1,42 @@
 <div>
     <mat-toolbar color="primary" class="custom-toolbar">
-        <img src="assets/icons/logo_black.png" alt="Hugo mathieux logo" class="logo" onmouseover="this.src='assets/icons/logo_hover.png'" onmouseleave="this.src='assets/icons/logo_black.png'">
+        
+    <nav>
+        <img src="assets/icons/logo_black.png" alt="Hugo mathieux logo" class="logo" onmouseover="this.src='assets/icons/logo_hover.png'" onmouseleave="this.src='assets/icons/logo_black.png'" routerLink="/home" routerLinkActive="active" ariaCurrentWhenActive="page">
         <ul class="buttons">
             <li>
-                <button>
+                <button routerLink="/about" routerLinkActive="active" ariaCurrentWhenActive="page">
                     About
                 </button>
             </li>
             <li>
-                <button>
-                    Projects
-                </button>
+                <div class="dropdown" (window:resize)="onResize($event)">
+                    <button class="dropbtn" id="dropbtn">Projects</button>
+                    <div class="dropdown-content" id="dropdownContent">
+                        <button 
+                        *ngFor="let project of projects" 
+                        class="projectMenu" 
+                        [routerLink]="['/project', project]" 
+                        routerLinkActive="active" 
+                        ariaCurrentWhenActive="page">
+                        {{ project.replace("_"," ") }}
+                      </button>
+                    </div>
+                </div> 
             </li>
             <li>
-                <button>
+                <button routerLink="/contact" routerLinkActive="active" ariaCurrentWhenActive="page">
                     Contacts  
                 </button>
             </li>
         </ul>
+      </nav>
+        
+        
+        
         <div class="social">
-            <app-logo logo="assets/icons/github.png" logo_hover="assets/icons/github_hover.png" name="Github"></app-logo>
-            <app-logo logo="assets/icons/linkedin.png" logo_hover="assets/icons/linkedin_hover.png" name="Linkedin"></app-logo>
+            <app-logo logo="assets/icons/github.png" logo_hover="assets/icons/github_hover.png" name="Github" link="https://github.com/MathieuxHugo"></app-logo>
+            <app-logo logo="assets/icons/linkedin.png" logo_hover="assets/icons/linkedin_hover.png" name="Linkedin" link="https://www.linkedin.com/in/hugo-mathieux-25a6351b4"></app-logo>
         </div>
         </mat-toolbar>
     

@@ -11,6 +11,7 @@ export class LogoComponent implements OnInit {
   @Input() logo = "";
   @Input() logo_hover = "";  
   @Input() name=""
+  @Input() link="";
   path=""
 
   ngOnInit(): void {
