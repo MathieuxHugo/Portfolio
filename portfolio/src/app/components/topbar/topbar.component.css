@@ -3,6 +3,7 @@
   color: white; /* Custom text color */
   height: 15vh;
   flex-direction: row-reverse;
+  width: 100%;
 }
 
 .logo {
@@ -34,7 +35,7 @@
 }
 
 button{
-  color: #FFFFFF;
+  color: white;
   background-color: transparent;
   background-repeat: no-repeat;
   border: none;

@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: react-snake-deployment
+  labels:
+    app: react-snake
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: react-snake
+  template:
+    metadata:
+      labels:
+        app: react-snake
+    spec:
+      containers:
+      - name: react-snake
+        image: mathieuxhugo/snake:latest  # Replace with your DockerHub image
+        ports:
+        - containerPort: 80
+        imagePullPolicy: Always
