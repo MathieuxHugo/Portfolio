@@ -3,6 +3,8 @@ kind: Service
 metadata:
   name: react-snake-service
 spec:
+  ipFamilies:
+  - IPv6
   selector:
     app: react-snake
   ports:

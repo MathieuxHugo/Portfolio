@@ -3,6 +3,8 @@ kind: Service
 metadata:
   name: portfolio-service
 spec:
+  ipFamilies:
+  - IPv6
   selector:
     app: portfolio
   ports:
